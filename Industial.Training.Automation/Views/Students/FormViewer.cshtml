@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "FormViewer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Process Flow</h2>
+<hr/>
+<div>
+    <ul>
+        <li>
+            @Html.ActionLink("Form I-1", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+        </li>
+        <li>
+            @Html.ActionLink("Form I-3", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+        </li>
+        <li>
+            @Html.ActionLink("Form I-5", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+        </li>
+        <li>
+            @Html.ActionLink("Form I-6", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+        </li>
+        <li>
+
+            @Html.ActionLink("Form I-7", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+        </li>
+    </ul>
+    
+   
+   
+   
+    <div>
+        <img src="@Href("~/Imagers/Slide1.PNG" )" />
+    </div>
+    <div>
+        <img src="@Href("~/Imagers/Slide2.PNG" )" />
+    </div>
+</div>
+
