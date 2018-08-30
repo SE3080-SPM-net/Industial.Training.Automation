@@ -221,13 +221,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagers\images.jfif" />
     <Content Include="Imagers\Slide1.PNG" />
     <Content Include="Imagers\slide2.PNG" />
+    <Content Include="Imagers\sliit-career-guidance-and-counseling-img-3.jpg" />
+    <Content Include="Imagers\καινοτομια-2.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\Form I-1.docx" />
+    <Content Include="Files\Form I-3.docx" />
+    <Content Include="Files\Form I-5.docx" />
+    <Content Include="Files\Form I-6.docx" />
+    <Content Include="Files\Form I-7.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

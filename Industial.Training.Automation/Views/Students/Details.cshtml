@@ -3,137 +3,201 @@
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var startDate = Model.StartDate != null ? Convert.ToDateTime(Model.StartDate).ToString("yyyy-MM-dd") : "";
+    var endDate = Model.EndDate != null ? Convert.ToDateTime(Model.EndDate).ToString("yyyy-MM-dd") : "";
+    var vivaDate = Model.VivaSheduledDate != null ? Convert.ToDateTime(Model.VivaSheduledDate).ToString("yyyy-MM-dd") : "";
 }
 
 <h2>Details</h2>
 
-<div>
+<div class="form-horizontal">
     <h4>Students</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentsName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudentsName)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentsName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StudentsName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentsID)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentsID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StudentsID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.StudentsID, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudentsID)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Faculty, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Faculty, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Faculty, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Faculty)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudyYear, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StudyYear, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.StudyYear, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Faculty)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudySemester, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StudySemester, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.StudySemester, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StudyYear)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudyYear)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyPhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CompanyPhoneNumber, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.CompanyPhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StudySemester)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.SupervisorName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SupervisorName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.SupervisorName, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudySemester)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control datepicker", @type = "date", @Value = @startDate, @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+    @if (Model.FormI_3 == true)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <i class="glyphicon glyphicon-ok" style="font-size:50px;color:blue"></i>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <lable class="form-control">Not submitted</lable>
+            </div>
+        </div>
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
+    @if (Model.FormI_3 == true)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <i class="glyphicon glyphicon-ok" style="font-size:50px;color:blue"></i>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <lable class="form-control">Not submitted</lable>
+            </div>
+        </div>
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
+    @if (Model.FormI_5 == true)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_5, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <i class="glyphicon glyphicon-ok" style="font-size:50px;color:blue"></i>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_5, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <lable class="form-control">Not submitted</lable>
+            </div>
+        </div>
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
+    @if (Model.FormI_6 == true)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_6, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <i class="glyphicon glyphicon-ok" style="font-size:50px;color:blue"></i>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_6, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <lable class="form-control">Not submitted</lable>
+            </div>
+        </div>
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FormI_1)
-        </dt>
+    @if (Model.FormI_7 == true)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_7, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <i class="glyphicon glyphicon-ok" style="font-size:50px;color:blue"></i>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FormI_7, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <lable class="form-control">Not submitted</lable>
+            </div>
+        </div>
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.FormI_1)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FormI_3)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control datepicker", @type = "date", @Value = @endDate, @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FormI_3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FormI_5)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FormI_5)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FormI_6)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FormI_6)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FormI_7)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FormI_7)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompanyName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyPhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompanyPhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SupervisorName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SupervisorName)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div class="form-group">
+        @Html.LabelFor(model => model.VivaSheduledDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VivaSheduledDate, new { htmlAttributes = new { @class = "form-control datepicker", @type = "date", @Value = @vivaDate, @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.VivaSheduledDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+    </p>
+    </div>

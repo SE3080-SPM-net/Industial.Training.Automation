@@ -101,6 +101,14 @@
     <Compile Include="Migrations\201808271010257_DBCreate5.Designer.cs">
       <DependentUpon>201808271010257_DBCreate5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808281204426_addedStudentEmail.cs" />
+    <Compile Include="Migrations\201808281204426_addedStudentEmail.Designer.cs">
+      <DependentUpon>201808281204426_addedStudentEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808291110401_db3.cs" />
+    <Compile Include="Migrations\201808291110401_db3.Designer.cs">
+      <DependentUpon>201808291110401_db3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Students.cs" />
@@ -127,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808271010257_DBCreate5.resx">
       <DependentUpon>201808271010257_DBCreate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808281204426_addedStudentEmail.resx">
+      <DependentUpon>201808281204426_addedStudentEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808291110401_db3.resx">
+      <DependentUpon>201808291110401_db3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,20 +9,19 @@
 <div>
     <ul>
         <li>
-            @Html.ActionLink("Form I-1", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+            @Html.ActionLink("Form I-1", "DownloadFile", new { file = "Form I-1.docx" }, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
         </li>
         <li>
-            @Html.ActionLink("Form I-3", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+            @Html.ActionLink("Form I-3", "DownloadFile", new { file = "Form I-3.docx" }, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
         </li>
         <li>
-            @Html.ActionLink("Form I-5", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+            @Html.ActionLink("Form I-5", "DownloadFile", new { file = "Form I-5.docx" }, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
         </li>
         <li>
-            @Html.ActionLink("Form I-6", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+            @Html.ActionLink("Form I-6", "DownloadFile", new { file = "Form I-6.docx" }, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
         </li>
-        <li>
-
-            @Html.ActionLink("Form I-7", "DownloadFiles", null, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
+        <li> 
+            @Html.ActionLink("Form I-7", "DownloadFile", new { file = "Form I-7.docx" }, htmlAttributes: new { @class = "glyphicon glyphicon-arrow-down" })<br />
         </li>
     </ul>
     
@@ -36,4 +35,6 @@
         <img src="@Href("~/Imagers/Slide2.PNG" )" />
     </div>
 </div>
+
+@Html.ActionLink("Back", "Index", "Home")
 

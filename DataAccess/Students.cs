@@ -22,9 +22,14 @@ namespace DataAccess
         [Required]
         public string StudentsID { get; set; }
 
+        [EmailAddress]
+        [Required]
+        public string StudentsEmail { get; set; }
+
         [Required]
         public string Faculty { get; set; }
 
+        
         [Required]
         public string StudyYear { get; set; }
 

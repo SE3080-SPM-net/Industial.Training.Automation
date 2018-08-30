@@ -22,11 +22,28 @@ namespace Industial.Training.Automation.Controllers
             return View(students.ToList());
         }
 
+        public FileResult DownloadFile(string file)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Files/";
+            byte[] fileBytes = System.IO.File.ReadAllBytes(path + file);
+            string fileName = file;
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+
+        }
         public ActionResult FormViewer()
         {
             return View();
         }
-
+        public ActionResult GetLoggedInStudentsID()
+        {
+              var student =(from a in db.Students where a.StudentsEmail.Equals(User.Identity.Name)select a).FirstOrDefault();
+                if (student == null)
+                {
+                    return RedirectToAction("Create");
+                }
+                return RedirectToAction("Details", new { id = student.Id });
+            
+        }
         // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
@@ -56,11 +73,24 @@ namespace Industial.Training.Automation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(/*[Bind(Include = "Id,StudentsName,StudentsID,Faculty,StudyYear,StudySemester,StartDate,EndDate,Form1_1,Form1_3,Form1_5,Form1_6,Form1_7,CompanyName,CompanyPhoneNumber,SupervisorName,InstructorID")]*/ Students students)
         {
+            students.StudentsEmail = User.Identity.Name;
             if (ModelState.IsValid)
             {
-                db.Students.Add(students);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                bool studentProfileExists = db.Students.Any(x => x.StudentsID == students.StudentsID);
+
+                if (studentProfileExists == true)
+                {
+                    ModelState.AddModelError("StudentID", "Student profile already exisits");
+                    return RedirectToAction("Create");
+                }
+                else
+                {
+                    db.Students.Add(students);
+                    db.SaveChanges();
+                    return RedirectToAction("GetLoggedInStudentsID");
+                }
+                
+              
             }
 
            
