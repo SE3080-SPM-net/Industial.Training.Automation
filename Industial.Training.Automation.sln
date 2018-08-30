@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helper", "Helper", "{BCA859
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperClasses", "HelperClasses\HelperClasses.csproj", "{190022B4-1909-412D-B007-15F6D09B2D71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusineesLogic", "BusineesLogic\BusineesLogic.csproj", "{AE55088A-37BE-48DD-A456-4362808DC9D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{190022B4-1909-412D-B007-15F6D09B2D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{190022B4-1909-412D-B007-15F6D09B2D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{190022B4-1909-412D-B007-15F6D09B2D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE55088A-37BE-48DD-A456-4362808DC9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE55088A-37BE-48DD-A456-4362808DC9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE55088A-37BE-48DD-A456-4362808DC9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE55088A-37BE-48DD-A456-4362808DC9D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +46,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{298B8758-6B56-4751-A1FD-06319071AD48} = {8D25E4FB-9EDC-4DA1-9F51-3D127F1C8385}
 		{190022B4-1909-412D-B007-15F6D09B2D71} = {BCA8591A-FC0B-4D9A-879F-C1AA506B56ED}
+		{AE55088A-37BE-48DD-A456-4362808DC9D7} = {B587E0C5-DD2F-4347-842C-EF04DD28804F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {96C316BD-0A75-438E-872D-49746628F9CA}

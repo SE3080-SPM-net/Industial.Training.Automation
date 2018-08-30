@@ -73,28 +73,29 @@ namespace Industial.Training.Automation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(/*[Bind(Include = "Id,StudentsName,StudentsID,Faculty,StudyYear,StudySemester,StartDate,EndDate,Form1_1,Form1_3,Form1_5,Form1_6,Form1_7,CompanyName,CompanyPhoneNumber,SupervisorName,InstructorID")]*/ Students students)
         {
-            students.StudentsEmail = User.Identity.Name;
-            if (ModelState.IsValid)
-            {
-                bool studentProfileExists = db.Students.Any(x => x.StudentsID == students.StudentsID);
+             students.StudentsEmail = User.Identity.Name;
+           
+             bool studentProfileExists = db.Students.Any(x => x.StudentsID == students.StudentsID);
 
-                if (studentProfileExists == true)
-                {
-                    ModelState.AddModelError("StudentID", "Student profile already exisits");
+             if (studentProfileExists == true)
+             {
+                TempData["ProfileAlreadyExists"] = "An account exists";
                     return RedirectToAction("Create");
-                }
-                else
-                {
-                    db.Students.Add(students);
+             }
+
+            else if (ModelState.IsValid)
+            {
+                db.Students.Add(students);
                     db.SaveChanges();
                     return RedirectToAction("GetLoggedInStudentsID");
-                }
-                
-              
-            }
+               
 
-           
-            return View(students);
+
+            }
+            else
+            {
+                return View(students);
+            }
         }
 
         // GET: Students/Edit/5

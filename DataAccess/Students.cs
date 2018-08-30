@@ -20,10 +20,12 @@ namespace DataAccess
         public string StudentsName { get; set; }
 
         [Required]
+        [Display(Name = "Student ID")]
         public string StudentsID { get; set; }
 
         [EmailAddress]
         [Required]
+        [Display(Name = "Email")]
         public string StudentsEmail { get; set; }
 
         [Required]
@@ -31,10 +33,14 @@ namespace DataAccess
 
         
         [Required]
+        [Display(Name = "Year")]
         public string StudyYear { get; set; }
 
         [Required]
+        [Display(Name = "Semster")]
         public string StudySemester { get; set; }
+
+        [Display(Name = "Start Date")]
 
         public DateTime? StartDate { get; set; }
 
@@ -50,6 +56,7 @@ namespace DataAccess
 
         public bool FormI_7 { get; set; }
 
+        [Display(Name ="VivaSheduledDate")]
         public DateTime? VivaSheduledDate { get; set; }
 
         [Required]
@@ -58,12 +65,12 @@ namespace DataAccess
         public string CompanyName { get; set; }
 
        
-        [Display(Name = "Company contact number")]
+        [Display(Name = "contact number")]
         public int? CompanyPhoneNumber { get; set; }
 
         
         [MaxLength(255)]
-        [Display(Name = "Supervisor")]
+        [Display(Name = "Supervisor Name")]
         public string SupervisorName { get; set; }
 
         [ForeignKey("Instructors")]

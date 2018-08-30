@@ -27,17 +27,34 @@
             </div>
             @if (User.Identity.IsAuthenticated)
             {
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Process", "FormViewer", "Students")</li>
-                    <li>@Html.ActionLink("Create Profile", "Create", "Students")</li>
-                    <li>@Html.ActionLink("View Profile", "GetLoggedInStudentsID", "Students")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                <div>
-                </div>
-                @Html.Partial("_LoginPartial")
-            </div>
+                if (User.IsInRole("Instructor"))
+                {
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Process", "FormViewer", "Students")</li>
+                            <li>@Html.ActionLink("View Profiles", "Index", "Students")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                        <div>
+                        </div>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                }
+                else
+                {
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Process", "FormViewer", "Students")</li>
+                            <li>@Html.ActionLink("Create Profile", "Create", "Students")</li>
+                            <li>@Html.ActionLink("View Profile", "GetLoggedInStudentsID", "Students")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                        <div>
+                        </div>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                }
+
             }
             else
             {
@@ -45,7 +62,6 @@
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Process", "FormViewer", "Students")</li>
-                        <li>@Html.ActionLink("View Studet Profile", "Index", "Students")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
                     <div>

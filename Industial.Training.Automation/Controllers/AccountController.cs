@@ -190,7 +190,7 @@ namespace Industial.Training.Automation.Controllers
             return View(model);
         }
 
-
+        [AllowAnonymous]
         public ActionResult RegisterInstructor()
         {
             RegisterInstructorViewModel viewModel = PopulateInstructorRegisterViewModel();
