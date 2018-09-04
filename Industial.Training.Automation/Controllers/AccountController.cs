@@ -63,6 +63,12 @@ namespace Industial.Training.Automation.Controllers
             return View();
         }
 
+
+       
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
         //
         // POST: /Account/Login
         [HttpPost]
@@ -135,6 +141,9 @@ namespace Industial.Training.Automation.Controllers
                     return View(model);
             }
         }
+
+        //------------------------------SHANNON-----------------------------------------//
+
 
         //
         // GET: /Account/Register
@@ -276,6 +285,8 @@ namespace Industial.Training.Automation.Controllers
 
             return viewModel;
         }
+
+        //---------------------------------------------SHANNON---END---------------------------------------------//
 
         //
         // GET: /Account/ConfirmEmail

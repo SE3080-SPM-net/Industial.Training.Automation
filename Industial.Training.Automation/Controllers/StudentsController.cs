@@ -30,6 +30,8 @@ namespace Industial.Training.Automation.Controllers
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
 
         }
+
+        //---------------------------------------UDANA------------------------------------------------------------------------//
         public ActionResult FormViewer()
         {
             return View();
@@ -44,6 +46,10 @@ namespace Industial.Training.Automation.Controllers
                 return RedirectToAction("Details", new { id = student.Id });
             
         }
+        //---------------------------------------UDANA------------------------------------------------------------------------//
+
+
+
         // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
@@ -66,12 +72,13 @@ namespace Industial.Training.Automation.Controllers
             return View();
         }
 
+        //---------------------------------------UDANA------------------------------------------------------------------------//
         // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(/*[Bind(Include = "Id,StudentsName,StudentsID,Faculty,StudyYear,StudySemester,StartDate,EndDate,Form1_1,Form1_3,Form1_5,Form1_6,Form1_7,CompanyName,CompanyPhoneNumber,SupervisorName,InstructorID")]*/ Students students)
+        public ActionResult Create (Students students)
         {
              students.StudentsEmail = User.Identity.Name;
            
@@ -97,6 +104,7 @@ namespace Industial.Training.Automation.Controllers
                 return View(students);
             }
         }
+        //---------------------------------------UDANA------------------------------------------------------------------------//
 
         // GET: Students/Edit/5
         public ActionResult Edit(int? id)
@@ -119,7 +127,7 @@ namespace Industial.Training.Automation.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,StudentsName,StudentsID,Faculty,StudyYear,StudySemester,StartDate,EndDate,Form1_1,Form1_3,Form1_5,Form1_6,Form1_7,CompanyName,CompanyPhoneNumber,SupervisorName,InstructorID")] Students students)
+        public ActionResult Edit(Students students)
         {
             if (ModelState.IsValid)
             {

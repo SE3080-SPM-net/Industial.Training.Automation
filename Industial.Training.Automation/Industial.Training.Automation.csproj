@@ -236,6 +236,7 @@
     <Content Include="Files\Form I-5.docx" />
     <Content Include="Files\Form I-6.docx" />
     <Content Include="Files\Form I-7.docx" />
+    <Content Include="Files\IT15120830_Wireframes.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

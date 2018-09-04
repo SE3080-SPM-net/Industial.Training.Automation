@@ -95,10 +95,10 @@
         </div>
     </div>
 
-    @if (Model.FormI_3 == true)
+    @if (Model.FormI_1 == true)
     {
         <div class="form-group">
-            @Html.LabelFor(model => model.FormI_3, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FormI_1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <i class="glyphicon glyphicon-ok" style="font-size:50px;color:blue"></i>
             </div>
@@ -107,7 +107,7 @@
     else
     {
         <div class="form-group">
-            @Html.LabelFor(model => model.FormI_3, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FormI_1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-3">
                 <lable class="form-control">Not submitted</lable>
             </div>
@@ -126,7 +126,7 @@
     else
     {
         <div class="form-group">
-            @Html.LabelFor(model => model.FormI_1, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FormI_3, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-3">
                 <lable class="form-control">Not submitted</lable>
             </div>

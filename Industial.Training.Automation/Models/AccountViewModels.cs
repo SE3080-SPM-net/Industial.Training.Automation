@@ -63,6 +63,8 @@ namespace Industial.Training.Automation.Models
         public bool RememberMe { get; set; }
     }
 
+
+    //----------------------SHANNON--START----------------------------------------------------------//
     public class RegisterStudentViewModel
     {
         [Required]
@@ -128,6 +130,8 @@ namespace Industial.Training.Automation.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+
+    //----------------------SHANNON--END----------------------------------------------------------//
 
     public class ResetPasswordViewModel
     {
